@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {Link } from 'react-router-dom'
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     return (
@@ -12,22 +12,22 @@ function Navbar() {
                 <div className='my-auto hidden md:block'>
                     <ul className='flex list-none gap-8 text-md  '>
                         <li>
-                            <a href="/" className='px-4 hover:text-brand-terracotta'>Home</a>
+                            <Link to="/" className='px-4 hover:text-brand-terracotta'>Home</Link>
                         </li>
                         <li>
-                            <a href="/products" className='px-4 hover:text-brand-terracotta'>Products</a>
+                            <Link to="/products" className='px-4 hover:text-brand-terracotta'>Products</Link>
                         </li>
                         <li>
-                            <a href="/about" className='px-4 hover:text-brand-terracotta'>About</a>
+                            <Link to="/about" className='px-4 hover:text-brand-terracotta'>About</Link>
                         </li>
                         <li>
-                            <a href="/contact" className='px-4 hover:text-brand-terracotta'>Contact</a>
+                            <Link to="/contact" className='px-4 hover:text-brand-terracotta'>Contact</Link>
                         </li>
                     </ul>
                 </div>
                 <div className="flex items-center gap-4">
                     <button className="p-3 bg-brand-terracotta/0 hover:scale-110 rounded-xl transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-5 h-5 lg:w-6 lg:h-6 text-brand-black" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shopping-cart w-5 h-5 lg:w-6 lg:h-6 text-brand-black" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
                     </button>
 
                     <button className="md:hidden p-2  hover:scale-110 rounded-lg transition-all" onClick={() => setIsOpen(!isOpen)}>
@@ -44,14 +44,14 @@ function Navbar() {
                     <ul className="flex flex-col gap-3 text-lg px-2">
                         {['Home', 'Products', 'About', 'Contact'].map((item) => (
                             <li key={item} className="w-full">
-                                <a
-                                    href={`/${item.toLowerCase()}`}
+                                <Link
+                                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                                     className="block w-full font-medium px-6 py-3 rounded-xl hover:text-brand-terracotta hover:bg-brand-terracotta/10 
                                             transition-all duration-300 hover:font-semibold hover:translate-scale-105 hover:translate-x-2"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {item}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
