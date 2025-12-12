@@ -7,7 +7,7 @@ function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   
-  // State for UI
+
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState('M');
   const [selectedColor, setSelectedColor] = useState('black');
@@ -47,10 +47,8 @@ function ProductPage() {
 
   if (!product) return <div>Loading...</div>;
 
-  // Related products (exclude current product)
   const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 3);
 
-  // Reviews data
   const reviews = [
     { 
       name: 'Priya Sharma', 
@@ -95,7 +93,7 @@ function ProductPage() {
 
   return (
     <div className="pt-16 lg:pt-20 min-h-screen bg-gray-50">
-      {/* Breadcrumb */}
+      
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="text-sm text-gray-600">
@@ -110,7 +108,7 @@ function ProductPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 mb-16">
-          {/* Images */}
+
           <div className="lg:order-2">
             <div className="aspect-3/4 rounded-lg overflow-hidden bg-gray-100 mb-6 lg:mb-0">
               <img
@@ -140,7 +138,6 @@ function ProductPage() {
             </div>
           </div>
 
-          {/* Product Info */}
           <div className="lg:order-1">
             <div className="text-xs text-[#D4A574] uppercase tracking-wide mb-2">
               {product.category}
@@ -159,7 +156,7 @@ function ProductPage() {
               ₹{product.price}
             </div>
 
-            {/* Size */}
+            
             <div className="mb-6">
               <label className="block text-sm font-medium mb-2">Size</label>
               <div className="flex flex-wrap gap-2">
@@ -179,7 +176,6 @@ function ProductPage() {
               </div>
             </div>
 
-            {/* Color */}
             <div className="mb-8">
               <label className="block text-sm font-medium mb-3">Color</label>
               <div className="flex gap-3">
@@ -199,7 +195,6 @@ function ProductPage() {
               </div>
             </div>
 
-            {/* Quantity */}
             <div className="flex items-center gap-4 mb-8">
               <label className="text-sm font-medium">Quantity</label>
               <div className="flex items-center border border-gray-300 rounded-lg p-1">
@@ -221,7 +216,6 @@ function ProductPage() {
               </div>
             </div>
 
-            {/* Add to Cart Button */}
             <button
               className={`w-full py-4 px-8 rounded-lg text-lg font-medium transition-all duration-200 flex items-center justify-center gap-3 ${
                 addedToCart
@@ -248,7 +242,6 @@ function ProductPage() {
               )}
             </button>
 
-            {/* Product Details */}
             <div className="mt-12 pt-8 border-t border-gray-200">
               <h3 className="text-lg font-medium mb-4">Product Details</h3>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -261,7 +254,6 @@ function ProductPage() {
           </div>
         </div>
 
-        {/* Description */}
         <div className="mb-16">
           <h2 className="text-2xl lg:text-3xl mb-6">Description</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -269,7 +261,6 @@ function ProductPage() {
           </p>
         </div>
 
-        {/* Customer Reviews */}
         <div className="mb-16">
           <h2 className="text-2xl lg:text-3xl mb-8">Customer Reviews</h2>
           <div className="space-y-6">
@@ -291,14 +282,13 @@ function ProductPage() {
           </div>
         </div>
 
-        {/* Related Products */}
         <div>
           <h2 className="text-2xl lg:text-3xl mb-8">You May Also Like</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {relatedProducts.map(relatedProduct => (
               <a
                 key={relatedProduct.id}
-                href={`/product/${relatedProduct.id}`}
+                href={`/products/${relatedProduct.id}`}
                 className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300"
                 data-discover="true"
               >

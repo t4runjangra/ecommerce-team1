@@ -163,7 +163,7 @@ function Products() {
                 {products.map(product => (
                   <a
                     key={product.id}
-                    href={`/product/${product.id}`}
+                    href={`/products/${product.id}`}
                     className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300"
                     data-discover="true"
                   >

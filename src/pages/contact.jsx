@@ -213,7 +213,7 @@ function Contact() {
                                     </a>
 
                                     <a
-                                        href="https://twitter.com"
+                                        href="https://x.com/tarunjangraa"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="p-3 bg-brand-black text-white hover:bg-[#D4A574] rounded-full transition-colors"

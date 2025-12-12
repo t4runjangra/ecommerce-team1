@@ -26,10 +26,12 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className="flex items-center gap-4">
+                     <Link to="/cart">
                     <button className="p-3 bg-brand-terracotta/0 hover:scale-110 rounded-xl transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shopping-cart w-5 h-5 lg:w-6 lg:h-6 text-brand-black" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
                     </button>
-
+                    
+                    </Link>
                     <button className="md:hidden p-2  hover:scale-110 rounded-lg transition-all" onClick={() => setIsOpen(!isOpen)}>
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
